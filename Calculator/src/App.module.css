@@ -1,0 +1,23 @@
+.outerDiv{
+  width: 300px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  margin-left: 50px;
+  min-height: 440px;
+  height: auto;
+}
+.displayTag{
+  width: 80%;
+  margin: 20px auto;
+  font-size: 25px;
+}
+.displayTag input{
+  width: 100%;
+}
+.buttons{
+  width: 80%;
+  margin: 0px auto;
+  display: grid;
+  height: 320px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
+}

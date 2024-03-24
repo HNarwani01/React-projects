@@ -1,0 +1,8 @@
+.displayTag{
+    width: 80%;
+    margin: 20px auto;
+    font-size: 25px;
+  }
+  .displayTag input{
+    width: 100%;
+  }

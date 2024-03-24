@@ -1,0 +1,8 @@
+.buttonContainer{
+  width: 80%;
+  margin: 0px auto;
+  display: grid;
+  height: 320px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
+}
