@@ -1,6 +1,6 @@
 // ButtonPrint.jsx
-const ButtonPrint = ({ value }) => {
-    return <button>{value}</button>;
+const ButtonPrint = ({ value, recordProblem }) => {
+    return <button value={value} onClick={()=>{recordProblem(value);}}>{value}</button>;
   };
   
   export default ButtonPrint;

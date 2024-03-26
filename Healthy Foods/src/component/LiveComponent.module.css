@@ -1,0 +1,8 @@
+.LiveComponent{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.LiveComponent input{
+    padding: 0px 10px ;
+}
