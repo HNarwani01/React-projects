@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import Thead from "./components/Thead.jsx";
 import Tdata from "./components/Tdata.jsx";
 
 function App() {
-  const work = [
+  const [work, setWork] = useState([
     {
       work: 'Washing Dishes',
       Time: '20/03/2024'
@@ -14,22 +14,31 @@ function App() {
       work: 'Cleaning House',
       Time: '20/03/2024'
     }
-  ];
-  const AddData = (time, work)=>{
-    let tempobj = {
-      work : work,
-      Time : time
+  ]);
+  
+  const handleAddToWork = (workTodo, time) => {
+    if (workTodo !== '' && time !== '') {
+      let newWork = {
+        work: workTodo,
+        Time: time
+      };
+      setWork([...work, newWork]);
     }
-    
-  }
-
+  };
+  
+  const handleremovefromwork = (i) => {
+    let newWork = [...work]; // Create a copy of the original array
+    newWork.splice(i, 1); // Remove the item at index i from the copied array
+  
+    setWork(newWork); // Update the state with the modified array
+  };
   return (
     <center className="center-tag">
       <table className="table table-success table-striped">
-        <Thead />
+      <Thead addtowork={handleAddToWork} />
         <tbody>
           {work.map((item, index) => (
-            <Tdata key={index} value={item} index={index}/>
+            <Tdata removefromwork={handleremovefromwork} key={index} value={item} index={index}/>
           ))}
         </tbody>
       </table>
