@@ -18,11 +18,7 @@ function App() {
   
   const handleAddToWork = (workTodo, time) => {
     if (workTodo !== '' && time !== '') {
-      let newWork = {
-        work: workTodo,
-        Time: time
-      };
-      setWork([...work, newWork]);
+      setWork((currentValue)=>[...currentValue, {work: workTodo,Time: time}]);
     }
   };
   

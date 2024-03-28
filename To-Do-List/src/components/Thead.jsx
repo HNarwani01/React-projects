@@ -1,32 +1,36 @@
-import { useState } from "react";
+import {  useRef } from "react";
 
 const Thead = ({addtowork}) => {
-    const [worktodo, setworktodo] = useState();
-    const handlework=(item)=>{
-        setworktodo(item);
-    }
-    const [whentodo, setwhentodo] = useState();
-    const handletime=(item)=>{
-        setwhentodo(item)
-    }
+    const toDoNameElement = useRef();
+    const dueDateElement = useRef();
     const handleAddButtonClick = () => {
+        let worktodo = toDoNameElement.current.value;
+        let whentodo = dueDateElement.current.value;
+        toDoNameElement.current.value =''
+        dueDateElement.current.value =''
         if (worktodo && whentodo) {
           addtowork(worktodo, whentodo);
-          setworktodo(''); // Clearing input fields after adding task
-          setwhentodo('');
+          
         }
       };
     return <>
-        <thead>
-            <tr>
-                <th scope="col">Count</th>
-                <th scope="col" className="input-work"><input type="text" placeholder="What to do?" onChange={(event)=>{handlework(event.target.value);}} value={worktodo}/></th>
-                <th scope="col" className="input-date"><input value={whentodo} type="date" name="" id=""onChange={(event)=>{
-                    handletime(event.target.value);
-                }} /></th>
-                <th scope="col" className="input-submit"><button onClick={handleAddButtonClick} className="hr-btn btn btn-success">Add</button></th>
-            </tr>
-        </thead>
+            
+    <thead>
+        <tr>
+            <th scope="col">Count</th>
+            <th scope="col" className="input-work">
+                <input type="text" placeholder="What to do?" ref={toDoNameElement} />
+            </th>
+            <th scope="col" className="input-date">
+                <input type="date" ref={dueDateElement} />
+            </th>
+            <th scope="col" className="input-submit">
+                <button className="hr-btn btn btn-success" onClick={handleAddButtonClick}>Add</button>
+            </th>
+        </tr>
+    </thead>
+
+
     </>
 }
 export default Thead;
