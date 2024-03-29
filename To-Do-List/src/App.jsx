@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import Thead from "./components/Thead.jsx";
 import Tdata from "./components/Tdata.jsx";
+import WelcomeMessage from "./components/Welcome.jsx";
 
 function App() {
   const [work, setWork] = useState([
@@ -38,6 +39,7 @@ function App() {
           ))}
         </tbody>
       </table>
+      {work.length===0 && (<WelcomeMessage/>)}
     </center>
   );
 }
