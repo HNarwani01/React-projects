@@ -1,6 +1,9 @@
-import {  useRef } from "react";
+import {  useContext, useRef } from "react";
+import { WorkList } from "../store/WorkList";
 
-const Thead = ({addtowork}) => {
+const Thead = () => {
+    const toDoItemsFromContext =useContext(WorkList);
+    const wayTOAdd = toDoItemsFromContext.addToWork;
     const toDoNameElement = useRef();
     const dueDateElement = useRef();
     const handleAddButtonClick = () => {
@@ -9,7 +12,7 @@ const Thead = ({addtowork}) => {
         toDoNameElement.current.value =''
         dueDateElement.current.value =''
         if (worktodo && whentodo) {
-          addtowork(worktodo, whentodo);
+            wayTOAdd(worktodo, whentodo);
           
         }
       };
