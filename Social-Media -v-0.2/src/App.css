@@ -25,3 +25,26 @@
     padding: 20px;
     border-radius: 10px;
 }
+.Null-Post_div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    justify-content: space-evenly;
+}
+.Null-Post_div h1{
+    text-align: center;
+    font-family: cursive;
+}
+.Null-Post_div button{
+    width: 20%;
+    align-self: center;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.spinner{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}

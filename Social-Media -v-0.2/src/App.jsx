@@ -5,6 +5,7 @@ import Footers from './component/footers';
 import Slidebars from './component/Slidebars';
 import NewPost from './component/NewPost';
 import PostList from './component/PostList';
+import {Outlet} from 'react-router-dom'
 import { useState } from 'react';
 import PostListProvider from './Store/PostListStore';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -19,7 +20,7 @@ function App() {
       <Slidebars method={setcurrentTab} tab={currentTab}/>
       <div className='component'>
       <Headers/>
-      {currentTab==='HOME'?<PostList/>:<NewPost/>}
+      <Outlet />
       <Footers/>
       </div>
     </div>

@@ -1,0 +1,17 @@
+[{
+    image:""
+    "title": "Name of Product",
+    "intro": "Small detail about the product",
+    "detail": "Full detail about the product in paragraph form",
+    "quantity": "1 Pair, 2 Pieces",
+    "color": ["Available Colors"],
+    "material": "Fabric",
+    "size": ["Available Sizes"],
+    "price": "Price",
+    "tag": "Category",
+    "brand": "Brand Name",
+    "weight": "Weight of the product",
+    "care_instructions": "Care instructions for the product",
+    "warranty": "Warranty information"
+}
+]
