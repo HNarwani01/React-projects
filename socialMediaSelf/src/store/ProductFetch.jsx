@@ -49,10 +49,12 @@ const ProductFetch = ({ children }) => {
             const newItem = {
                 id: productObject.id,
                 brand: productObject.brand,
-                images: productObject.images,
+                images: productObject.thumbnail,
                 category: productObject.category,
                 description: productObject.description,
+                discount: productObject.discountPercentage,
                 price: productObject.price,
+                title:productObject.title,                
                 quantity: 1 // Start with quantity 1
             };
             setcartItems([...cartItems, newItem]);

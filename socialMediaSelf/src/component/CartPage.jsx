@@ -1,14 +1,14 @@
-import CartProductHeading from "./CartProductHeading";
-import ProductCheckoutLeft from "./ProdeuctCheckoutLeft";
-import SimpleBanner from "./SimpleBanner";
+import { useContext } from "react";
+import { ProductListContext } from "../store/ProductFetch.jsx";
+import EmptyCart from "./EmptyCart.jsx";
+import NonEmptyCart from "./NonEmptyCart.jsx";
 
-const CartPage= ()=>{
+const CartPage = () => {
+    const {cartItems} = useContext(ProductListContext)
     return <>
-        <Sir/>mpleBanne
-        <CartProductHeading/>
-        
+            {cartItems.length===0?<EmptyCart/> : <NonEmptyCart/>}
     </>
 
-    
+
 }
 export default CartPage;

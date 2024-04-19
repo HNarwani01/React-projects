@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { ProductListContext } from "../store/ProductFetch";
-
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
     const {cartItems} = useContext(ProductListContext);
@@ -21,12 +21,12 @@ const NavBar = () => {
                             <a className="nav-link" href="#">Link</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#"><button type="button" className="btn btn-secondary position-relative" >
+                            <Link className="nav-link" to='/cart'><button type="button" className="btn btn-secondary position-relative" >
                             <FaCartShopping />
                                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                     {NumberOfitems}
                                 </span>
-                            </button></a>
+                            </button></Link>
                         </li>
                     </ul>
                     <form className="d-flex" role="search">
